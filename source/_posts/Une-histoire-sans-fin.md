@@ -91,7 +91,7 @@ Pourtant ca prend deja pas mal de temps a calculer, sur un mac book pro j'en sui
 
 Si ca prend autant de temps, c'est a cause du nombre d'appel de fonctions réalisé, qui suit la meme logique que la suite de Fibonacci. Pour les valeurs n = 1 ou n = 2, on appellera la fonction recursive une fois (puisqu'elle retournera directement une valeur au lieu d'appeler d'autres fonctions). Ensuite, puisqu'on appelle f(n - 1) et f(n - 2), on appelera autant de fonctions que la somme des appels des deux rangs precedents. Donc
 `nbr_appels(n) = fibonacci(n) - 1`
-Le -1 est la car le terme constant pour les rangs 1 et 2 vaut desormais 1 un appel de fonction, au lieu de nos 2 lapins.
+Le -1 est la car le terme constant pour les rangs 1 et 2 vaut desormais 1 appel de fonction, au lieu de nos 2 lapins.
 
 Ca veut donc dire que pour calculer le rang 50 de la suite de fibonacci, j'ai appelé 25 172 538 049 ma fonction recursive.
 
@@ -141,13 +141,13 @@ int main(int ac, char **av) {
 	return 0;
 }
 ```
-En plus du cache vous voyez dans ce code les quelques lignes que j'ai rajouté pour compter le nombre d'appels de fonctions, et pour chronométrer mon programme.
+*En plus du cache vous voyez dans ce code les quelques lignes que j'ai rajouté pour compter le nombre d'appels de fonctions et pour chronométrer mon programme.*
 
-Le programme peut sembler inutilement compliqué si vous ne faites pas du C, c'est juste que pour déclarer un tableau pour stocker mes valeurs je passe par la fonction malloc.
+Le programme peut sembler inutilement compliqué si vous ne faites pas du C, c'est juste que j'utilise la fonction `malloc` pour déclarer un tableau pour stocker mes valeurs.
 
 Concernant les performances, ca n'a plus rien a voir. Tous les calculs sont instantanés:
 ![performance chart](http://images.mrtraan.love/fibo_chart2.png)
-*(Les variations sont normales, le temps d'execution est tellement court que le moindre cycle de cpu a un impact sur la performance.)*
+*Les variations sont normales, le temps d'execution est tellement court que le moindre cycle de cpu a un impact sur la performance.*
 
 Et oui l'echelle est bien en micro secondes, soit un millionième de secondes. Je suis allé jusqu'au rang 200 cette fois, mais ca n'a pas beaucoup de sens puisqu'a partir du rang 92 on atteint la valeur de 15 080 227 609 492 692 858 (cé bocou) et que du coup on part en overflow et les resultats deviennent faux.
 
