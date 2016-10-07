@@ -93,7 +93,7 @@ Si ca prend autant de temps, c'est a cause du nombre d'appel de fonctions réali
 `nbr_appels(n) = fibonacci(n) - 1`
 Le -1 est la car le terme constant pour les rangs 1 et 2 vaut desormais 1 appel de fonction, au lieu de nos 2 lapins.
 
-Ca veut donc dire que pour calculer le rang 50 de la suite de fibonacci, j'ai appelé 25 172 538 049 ma fonction recursive.
+Ca veut donc dire que pour calculer le rang 50 de la suite de fibonacci, j'ai appelé 25 172 538 049 de fois ma fonction recursive.
 
 J'ai décidé d'implémenter un systeme de cache qui stockerai les valeurs déjà calculées, au lieu de les recalculer a chaque fois:
 ```c
@@ -141,7 +141,7 @@ int main(int ac, char **av) {
 	return 0;
 }
 ```
-*En plus du cache vous voyez dans ce code les quelques lignes que j'ai rajouté pour compter le nombre d'appels de fonctions et pour chronométrer mon programme.*
+*En plus du cache, j'ai rajouté quelques lignes pour compter le nombre d'appels de fonctions et pour chronométrer mon programme.*
 
 Le programme peut sembler inutilement compliqué si vous ne faites pas du C, c'est juste que j'utilise la fonction `malloc` pour déclarer un tableau pour stocker mes valeurs.
 
